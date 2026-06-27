@@ -2,64 +2,64 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>शुभ विवाह आमंत्रण</title>
     <style>
-        /* Global Styles */
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Georgia', serif; background-color: #fdf5e6; }
+        /* Base Reset */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Georgia', serif; background-color: #fdf5e6; -webkit-font-smoothing: antialiased; }
         
-        /* FIRST PAGE: TRADITIONAL COVER SHEET */
-        #cover-page { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #ffcc00, #ffa500); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.8s, visibility 0.8s; box-sizing: border-box; padding: 15px; }
-        .envelope-container { width: 100%; max-width: 750px; min-height: 550px; background-color: #fff9e6; border: 12px double #800000; box-shadow: 0px 12px 35px rgba(128,0,0,0.4); position: relative; padding: 30px; box-sizing: border-box; color: #800000; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
-        .envelope-container::before, .envelope-container::after { content: "❖ ═════ ❃ ═════ ❖"; font-size: 16px; color: #800000; position: absolute; width: 100%; left: 0; }
-        .envelope-container::before { top: 10px; } .envelope-container::after { bottom: 10px; }
-        .top-decor { display: flex; justify-content: space-between; align-items: center; padding: 0 10px; }
-        .swastik-art { font-size: 28px; color: #800000; font-weight: bold; }
-        .ganesha-head { font-size: 42px; line-height: 1; }
-        .shubh-vivah-tag { font-size: 38px; font-weight: bold; color: #b30000; margin: 15px 0 5px 0; letter-spacing: 2px; }
-        .kalash-art { font-size: 55px; line-height: 1; margin-bottom: 5px; animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        .cover-middle { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin: 15px 0; }
-        .left-heart-box { border: 2px dashed #b30000; padding: 15px 10px; border-radius: 8px; background: #fff0b3; text-align: center; min-width: 160px; }
-        .heart-icon { font-size: 32px; color: #b30000; margin: 3px 0; animation: beat 1.2s infinite; }
-        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        .names-inside { font-weight: bold; font-size: 19px; }
-        .right-lines-box { flex: 1; margin-left: 30px; min-width: 250px; }
-        .manyavar-text { font-size: 24px; font-weight: bold; text-align: left; margin-bottom: 8px; color: #b30000; }
-        .entry-line { border-bottom: 2px dashed #800000; margin-bottom: 16px; height: 12px; width: 100%; }
-        .btn-container { text-align: center; margin: 10px 0; }
-        .invite-btn { background: linear-gradient(135deg, #b30000, #800000); color: #fff; border: 2px solid #ffcc00; padding: 14px 45px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 6px 20px rgba(179,0,0,0.4); transition: all 0.3s; }
-        .invite-btn:hover { background: linear-gradient(135deg, #ffcc00, #ffa500); color: #800000; border-color: #800000; transform: scale(1.05); }
-        .cover-footer { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-top: 10px; border-top: 2px dashed #800000; padding-top: 12px; font-size: 14px; }
-        .vinit-box { text-align: left; line-height: 1.4; font-size: 13px; }
-        .choohan-box { font-size: 18px; font-weight: bold; color: #b30000; }
+        /* FIRST PAGE: COVER SHEET */
+        #cover-page { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #ffcc00, #ffa500); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.6s, visibility 0.6s; box-sizing: border-box; padding: 10px; }
+        .envelope-container { width: 100%; max-width: 500px; height: 92%; max-height: 650px; background-color: #fff9e6; border: 10px double #800000; box-shadow: 0px 8px 25px rgba(128,0,0,0.35); position: relative; padding: 20px 15px; box-sizing: border-box; color: #800000; display: flex; flex-direction: column; justify-content: space-between; text-align: center; border-radius: 6px; }
+        .envelope-container::before, .envelope-container::after { content: "❖ ════ ❃ ════ ❖"; font-size: 13px; color: #800000; position: absolute; width: 100%; left: 0; }
+        .envelope-container::before { top: 5px; } .envelope-container::after { bottom: 5px; }
+        .top-decor { display: flex; justify-content: space-between; align-items: center; padding: 0 5px; }
+        .swastik-art { font-size: 22px; color: #800000; font-weight: bold; }
+        .ganesha-head { font-size: 32px; line-height: 1; }
+        .shubh-vivah-tag { font-size: 32px; font-weight: bold; color: #b30000; margin: 10px 0 2px 0; letter-spacing: 1px; }
+        .kalash-art { font-size: 45px; line-height: 1; margin-bottom: 2px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        .cover-middle { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 10px 0; }
+        .left-heart-box { border: 2px dashed #b30000; padding: 10px 15px; border-radius: 8px; background: #fff0b3; text-align: center; width: 80%; max-width: 200px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); box-sizing: border-box; }
+        .heart-icon { font-size: 26px; color: #b30000; margin: 2px 0; animation: beat 1.2s infinite; }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+        .names-inside { font-weight: bold; font-size: 18px; }
+        .right-lines-box { width: 90%; margin: 0 auto; }
+        .manyavar-text { font-size: 20px; font-weight: bold; text-align: left; margin-bottom: 5px; color: #b30000; }
+        .entry-line { border-bottom: 2px dashed #800000; margin-bottom: 12px; height: 8px; width: 100%; }
+        .btn-container { text-align: center; margin: 5px 0; }
+        .invite-btn { background: linear-gradient(135deg, #b30000, #800000); color: #fff; border: 2px solid #ffcc00; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 5px 15px rgba(179,0,0,0.3); transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+        .invite-btn:hover { transform: scale(1.03); }
+        .cover-footer { display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed #800000; padding-top: 8px; font-size: 12px; }
+        .vinit-box { text-align: left; line-height: 1.3; font-size: 11px; }
+        .choohan-box { font-size: 14px; font-weight: bold; color: #b30000; }
 
-        /* SECOND PAGE: MAIN DETAILS CARD */
-        #main-card { display: none; justify-content: center; align-items: center; min-height: 100vh; padding: 25px 15px; box-sizing: border-box; }
-        .card-container { width: 100%; max-width: 800px; background-color: #fffdf5; border: 18px solid #800000; border-image: repeating-linear-gradient(45deg, #800000, #800000 12px, #ffcc00 12px, #ffcc00 24px) 18; box-shadow: 0px 10px 40px rgba(0,0,0,0.25); padding: 40px 30px; box-sizing: border-box; color: #800000; text-align: center; position: relative; }
-        .card-container::before, .card-container::after { content: "✿ ═══════════ ❃ ═══════════ ✿"; font-size: 20px; color: #b30000; position: absolute; width: 100%; left: 0; text-align: center; }
-        .card-container::before { top: 12px; } .card-container::after { bottom: 12px; }
-        .header-title { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
-        .title-box { background: linear-gradient(135deg, #800000, #b30000); color: #fff; display: inline-block; padding: 8px 35px; border-radius: 25px; font-size: 19px; font-weight: bold; margin-bottom: 30px; border: 2px solid #ffcc00; }
-        .events-grid { display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 30px; }
-        .event-box { border: 2px dotted #b30000; padding: 18px 20px; border-radius: 12px; margin: 10px; min-width: 210px; background-color: #fff9e6; }
-        .event-title { font-weight: bold; font-size: 19px; margin-bottom: 8px; color: #b30000; }
-        .event-date { background-color: #800000; color: #fff; padding: 6px 14px; border-radius: 4px; font-size: 15px; font-weight: bold; }
-        .barat-section { margin: 25px 0; }
-        .barat-title { font-weight: bold; background-color: #b30000; color: #fff; display: inline-block; padding: 5px 22px; border-radius: 4px; margin-bottom: 6px; }
-        .shayari { font-style: italic; font-size: 16px; margin: 25px auto; max-width: 85%; border-left: 4px solid #b30000; border-right: 4px solid #b30000; padding: 12px 20px; background-color: #fff4cc; line-height: 1.5; border-radius: 6px; }
-        .venue { font-weight: bold; font-size: 19px; margin-bottom: 30px; color: #b30000; background-color: #fff0b3; display: inline-block; padding: 8px 25px; border-radius: 4px; border: 1px dashed #800000; }
-        .divider { font-size: 22px; margin: 30px 0; color: #b30000; }
-        .invitation-text { font-size: 19px; margin-bottom: 30px; line-height: 1.6; }
-        .couple-section { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; margin-bottom: 30px; }
-        .couple-box { border: 4px double #800000; border-radius: 50%; width: 210px; height: 210px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #fff; padding: 10px; box-sizing: border-box; }
-        .couple-name { font-size: 21px; font-weight: bold; color: #b30000; margin-bottom: 6px; border-bottom: 1px solid #800000; padding-bottom: 2px; }
+        /* SECOND PAGE: LIVE MOBILE RESPONSIVE DETAILS CARD */
+        #main-card { display: none; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 10px; box-sizing: border-box; }
+        .card-container { width: 100%; max-width: 500px; background-color: #fffdf5; border: 12px solid #800000; border-image: repeating-linear-gradient(45deg, #800000, #800000 8px, #ffcc00 8px, #ffcc00 16px) 12; box-shadow: 0px 6px 25px rgba(0,0,0,0.2); padding: 25px 15px; box-sizing: border-box; color: #800000; text-align: center; position: relative; }
+        .card-container::before, .card-container::after { content: "✿ ═════ ❃ ═════ ✿"; font-size: 14px; color: #b30000; position: absolute; width: 100%; left: 0; text-align: center; }
+        .card-container::before { top: 6px; } .card-container::after { bottom: 6px; }
+        .header-title { font-size: 18px; font-weight: bold; margin-bottom: 3px; }
+        .title-box { background: linear-gradient(135deg, #800000, #b30000); color: #fff; display: inline-block; padding: 6px 25px; border-radius: 20px; font-size: 16px; font-weight: bold; margin-bottom: 20px; border: 1px solid #ffcc00; }
+        .events-grid { display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 20px; }
+        .event-box { border: 2px dotted #b30000; padding: 12px 15px; border-radius: 10px; width: 90%; background-color: #fff9e6; box-sizing: border-box; }
+        .event-title { font-weight: bold; font-size: 17px; margin-bottom: 5px; color: #b30000; }
+        .event-date { background-color: #800000; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 14px; font-weight: bold; display: inline-block; }
+        .barat-section { margin: 15px 0; }
+        .barat-title { font-weight: bold; background-color: #b30000; color: #fff; display: inline-block; padding: 4px 15px; border-radius: 4px; font-size: 14px; }
+        .shayari { font-style: italic; font-size: 14px; margin: 15px auto; max-width: 95%; border-left: 3px solid #b30000; border-right: 3px solid #b30000; padding: 8px 12px; background-color: #fff4cc; line-height: 1.4; border-radius: 4px; box-sizing: border-box; }
+        .venue { font-weight: bold; font-size: 15px; margin-bottom: 20px; color: #b30000; background-color: #fff0b3; display: inline-block; padding: 6px 15px; border-radius: 4px; border: 1px dashed #800000; max-width: 90%; }
+        .divider { font-size: 16px; margin: 20px 0; color: #b30000; }
+        .invitation-text { font-size: 16px; margin-bottom: 20px; line-height: 1.4; }
+        .couple-section { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-bottom: 20px; }
+        .couple-box { border: 4px double #800000; border-radius: 12px; width: 90%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 12px; box-sizing: border-box; }
+        .couple-name { font-size: 18px; font-weight: bold; color: #b30000; margin-bottom: 4px; border-bottom: 1px solid #800000; padding-bottom: 2px; }
         .parents-info { font-size: 13px; line-height: 1.4; color: #590000; }
-        .center-art { width: 110px; height: 110px; display: flex; justify-content: center; align-items: center; }
-        .footer-sections { display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 15px; margin-top: 30px; border-top: 2px dashed #800000; padding-top: 25px; }
-        .footer-box { flex: 1; min-width: 220px; margin: 12px; }
-        .footer-title { background-color: #800000; color: #fff; display: inline-block; padding: 4px 14px; border-radius: 3px; font-weight: bold; margin-bottom: 12px; }
-        .footer-names { line-height: 1.5; font-size: 14px; }
+        .center-art { width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; margin: 5px 0; }
+        .footer-sections { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 20px; border-top: 2px dashed #800000; padding-top: 20px; }
+        .footer-box { width: 95%; background-color: #fffaf0; padding: 10px; border-radius: 6px; box-sizing: border-box; }
+        .footer-title { background-color: #800000; color: #fff; display: inline-block; padding: 3px 10px; border-radius: 3px; font-weight: bold; margin-bottom: 8px; font-size: 13px; }
+        .footer-names { line-height: 1.4; font-size: 13px; }
     </style>
 </head>
 <body>
@@ -70,15 +70,15 @@
             <div class="swastik-art">卐</div>
             <div>
                 <div class="ganesha-head">🌺</div>
-                <div style="font-size: 14px; font-weight: bold; margin-top: 2px;">॥ श्री गणेशाय नमः ॥</div>
+                <div style="font-size: 11px; font-weight: bold; margin-top: 2px;">॥ श्री गणेशाय नमः ॥</div>
             </div>
             <div class="swastik-art">卐</div>
         </div>
 
         <div class="shubh-vivah-section">
-            <div class="kalash-art">%E1%B3%A2</div> 
+            <div class="kalash-art">🏺</div> 
             <div class="shubh-vivah-tag">✨ शुभ विवाह ✨</div>
-            <span style="background:#b30000; color:#fff; padding:3px 15px; border-radius:3px; font-size:12px; letter-spacing:1px; font-weight:bold;">निमंत्रण पत्र</span>
+            <span style="background:#b30000; color:#fff; padding:2px 12px; border-radius:3px; font-size:11px; letter-spacing:1px; font-weight:bold;">निमंत्रण पत्र</span>
         </div>
 
         <div class="cover-middle">
@@ -86,14 +86,13 @@
                 <div class="names-inside">दिपाली</div>
                 <div class="heart-icon">♥</div>
                 <div class="names-inside">दीपक</div>
-                <div style="background:#800000; color:#fff; font-size:12px; margin-top:12px; padding:5px; border-radius:4px; font-weight:bold;">
+                <div style="background:#800000; color:#fff; font-size:11px; margin-top:8px; padding:4px; border-radius:4px; font-weight:bold;">
                     समारोह: 5 जन. 2026
                 </div>
             </div>
 
             <div class="right-lines-box">
                 <div class="manyavar-text">मान्यवर,</div>
-                <div class="entry-line"></div>
                 <div class="entry-line"></div>
                 <div class="entry-line"></div>
             </div>
@@ -107,14 +106,14 @@
             <div class="vinit-box">
                 <strong>॥ विनीत ॥</strong><br>
                 मोहन लाल एवं दुर्गावती<br>
-                ग्राम- सेमरिया, जिला- कोरबा
+                ग्राम- सेमरिया (कोरबा)
             </div>
             
             <div class="choohan-box">
-                🍁 चौहान परिवार का स्नेहिल आमंत्रण 🍁
+                🍁 चौहान परिवार 🍁
             </div>
             
-            <div style="font-size: 35px; transform: scaleX(-1); line-height: 1;">🎺</div>
+            <div style="font-size: 24px; transform: scaleX(-1); line-height: 1;"> trumpet </div>
         </div>
     </div>
 </div>
@@ -138,7 +137,7 @@
 
         <div class="barat-section">
             <div class="barat-title">बारात आगमन</div>
-            <div style="font-size: 18px;"><strong>5 जनवरी 2026, सोमवार</strong></div>
+            <div style="font-size: 16px; margin-top: 5px;"><strong>5 जनवरी 2026, सोमवार</strong></div>
         </div>
 
         <div class="shayari">
@@ -149,7 +148,7 @@
             🪔 कार्यक्रम स्थल: निवास ग्राम-सेमरिया, जिला-कोरबा (छ.ग.) 🪔
         </div>
 
-        <div class="divider">⚜ ═════════ 🌻 ═════════ ⚜</div>
+        <div class="divider">⚜ ═════ 🌻 ═════ ⚜</div>
 
         <div class="invitation-text">
             <strong>मान्यवर,</strong><br>ईश्वर की असीम कृपा से हमारे यहां
@@ -166,7 +165,7 @@
             </div>
 
             <div class="center-art">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
                     <path d="M35,65 C35,50 45,45 45,35 C42,35 40,30 42,25 C42,20 48,15 48,22 C50,22 51,25 50,28 C52,32 50,35 48,35 C48,45 42,50 42,65 Z" fill="#800000"/>
                     <path d="M44,20 Q48,12 51,18 Q46,16 44,20" fill="#b30000" stroke="#800000" stroke-width="1"/>
                     <path d="M65,65 C65,50 55,45 55,35 C58,35 60,30 58,25 C58,20 52,15 52,22 C50,22 49,25 50,28 C48,32 50,35 52,35 C52,45 58,50 58,65 Z" fill="#800000"/>
@@ -189,7 +188,7 @@
             की मधुर वेला पर पधार कर वर-वधु को अपने स्नेहिल आशीर्वाद प्रदान कर हमें अनुग्रहित करें।
         </div>
 
-        <div class="divider">⚜ ═════════ 🌻 ═════════ ⚜</div>
+        <div class="divider">⚜ ═════ 🌻 ═════ ⚜</div>
 
         <div class="footer-sections">
             <div class="footer-box">
@@ -215,10 +214,11 @@
         
         cover.style.opacity = '0';
         cover.style.visibility = 'hidden';
-        mainCard.style.display = 'flex';
+        mainCard.style.display = 'block';
         
-        window.dispatchEvent(new Event('resize'));
-    }
+        // Mobile rendering recalculation
+        window.scrollTo(0, 0);
+    </div>
 </script>
 </body>
     </html>

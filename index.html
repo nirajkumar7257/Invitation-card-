@@ -20,7 +20,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
+            padding: 20px;
             overflow-x: hidden;
         }
 
@@ -84,17 +84,19 @@
             transform: scale(1.05);
         }
 
-        /* --- MAIN PHOTO LAYOUT CARD --- */
+        /* --- MAIN TRADITIONAL CARD STYLES --- */
         .card-container {
-            max-width: 900px;
+            max-width: 800px;
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 25px;
             opacity: 0;
             transform: scale(0.95);
             transition: all 0.8s ease-in-out;
+            transition-delay: 0.2s;
             pointer-events: none;
+            margin: 20px 0;
         }
 
         body.card-visible .card-container {
@@ -108,72 +110,82 @@
         }
 
         .panel {
-            background-color: #f7e7c4; /* Cream Background from Photo */
-            border: 6px double #a31d27;
-            padding: 20px;
+            background-color: #f7e7c4; 
+            border: 8px double #a31d27;
+            padding: 25px;
             color: #a31d27;
             position: relative;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             text-align: center;
         }
 
-        /* Top/Bottom Traditional Borders */
-        .diamond-border {
-            font-size: 9px;
+        .panel::before, .panel::after {
+            content: "◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆";
+            display: block;
+            font-size: 10px;
             letter-spacing: 2px;
             color: #a31d27;
-            opacity: 0.6;
+            opacity: 0.5;
             margin: 5px 0;
         }
 
         .ganesh-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-family: 'Yatra One', cursive;
-            font-size: 15px;
-            margin-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .ganesh-icon {
+            font-size: 28px;
         }
 
         .section-title {
             background-color: #a31d27;
             color: #f7e7c4;
             display: inline-block;
-            padding: 2px 20px;
+            padding: 4px 25px;
             font-family: 'Yatra One', cursive;
-            font-size: 15px;
-            border-radius: 3px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-bottom: 25px;
         }
 
-        /* --- PANEL 1: KARYAKRAM (Exact Photo Design) --- */
-        .top-row-events {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
+        /* --- TOP PANEL: KARYAKRAM --- */
+        .karyakram-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         .event-box {
             border: 2px dashed #a31d27;
-            padding: 10px 15px;
-            border-radius: 50% 50% 0 0; /* Dome Shape from Photo */
+            padding: 15px;
+            border-radius: 50% 50% 0 0; 
             background: #fff6e0;
-            min-width: 200px;
         }
 
         .event-name {
             font-family: 'Yatra One', cursive;
-            font-size: 14px;
-            margin-bottom: 3px;
+            font-size: 16px;
+            margin-bottom: 5px;
         }
 
         .event-date {
             background-color: #a31d27;
             color: #f7e7c4;
             display: inline-block;
-            padding: 2px 10px;
-            font-size: 12px;
+            padding: 2px 15px;
+            font-size: 13px;
             font-weight: bold;
-            border-radius: 2px;
+            border-radius: 3px;
+        }
+
+        .barat-section {
+            margin: 20px 0;
         }
 
         .barat-title {
@@ -181,144 +193,146 @@
             color: #f7e7c4;
             display: inline-block;
             padding: 2px 15px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: bold;
-            border-radius: 2px;
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         .barat-date {
             font-family: 'Yatra One', cursive;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .poetry-box {
             border: 1px solid #a31d27;
-            padding: 8px;
+            padding: 10px;
             font-style: italic;
             font-size: 13px;
-            line-height: 1.5;
-            margin: 10px auto;
-            max-width: 700px;
+            line-height: 1.6;
+            margin: 15px 0;
             background-color: #fff9ed;
             font-weight: 500;
         }
 
         .venue-info {
             font-family: 'Yatra One', cursive;
-            font-size: 14px;
-        }
-
-        /* --- PANEL 2: INVITATION PANEL (Exact Photo Text Alignment) --- */
-        .manyavar-header {
-            text-align: left;
-            font-family: 'Yatra One', cursive;
             font-size: 15px;
-            margin-left: 20px;
+            margin-top: 10px;
         }
 
-        .krupa-text {
-            text-align: center;
+        /* --- BOTTOM PANEL: INVITATION --- */
+        .manyavar-text {
+            font-family: 'Yatra One', cursive;
+            font-size: 16px;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .invitation-line {
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: left;
+            text-indent: 40px;
         }
 
-        /* Photo Column Structure for Details */
-        .details-columns {
-            display: grid;
-            grid-template-columns: 1fr 0.3fr 1fr;
+        .couple-container {
+            display: flex;
+            justify-content: space-around;
             align-items: center;
-            margin: 15px 0;
-            text-align: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .bio-data-block {
-            padding: 10px;
+        .biodata-circle {
+            border: 3px dotted #a31d27;
+            border-radius: 50%;
+            padding: 20px 15px;
+            min-height: 175px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff6e0;
         }
 
-        .profile-title {
+        .main-name {
             font-family: 'Yatra One', cursive;
             font-size: 18px;
             font-weight: bold;
-            color: #a31d27;
             margin-bottom: 5px;
+            background: #a31d27;
+            color: #f7e7c4;
+            padding: 2px 0;
+            border-radius: 15px;
         }
 
-        .bio-text {
-            font-size: 12px;
-            line-height: 1.6;
+        .sub-details {
+            font-size: 11px;
+            line-height: 1.5;
             font-weight: 500;
         }
 
-        .center-separator {
-            font-size: 30px;
+        .center-art {
+            font-size: 35px;
         }
 
-        .blessing-text {
+        .request-text {
             font-size: 13px;
             font-weight: 600;
-            max-width: 500px;
-            margin: 15px auto;
-            line-height: 1.4;
+            max-width: 450px;
+            margin: 20px auto;
+            line-height: 1.5;
+            border-left: 3px solid #a31d27;
+            border-right: 3px solid #a31d27;
+            padding: 0 10px;
         }
 
-        /* Bottom 3 Columns Footer from Photo */
-        .footer-sections {
+        /* Footer Family Sections */
+        .family-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            border-top: 1px dashed #a31d27;
-            margin-top: 20px;
-            padding-top: 10px;
             gap: 10px;
+            margin-top: 30px;
+            border-top: 1px dashed #a31d27;
+            padding-top: 15px;
         }
 
-        .footer-column {
-            font-size: 11px;
-            border-right: 1px solid rgba(163, 29, 39, 0.2);
+        .family-box {
+            font-size: 12px;
         }
 
-        .footer-column:last-child {
-            border-right: none;
-        }
-
-        .footer-column h4 {
+        .family-box h4 {
             background-color: #a31d27;
             color: #f7e7c4;
             display: inline-block;
-            padding: 2px 8px;
-            font-size: 11px;
-            margin-bottom: 5px;
+            padding: 2px 10px;
+            font-size: 12px;
+            margin-bottom: 8px;
             border-radius: 2px;
-            font-family: 'Yatra One', cursive;
         }
 
-        .footer-names {
+        .family-names {
             font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        /* Mobile Layout Shift */
-        @media (max-width: 600px) {
-            .details-columns {
+        /* Responsive Layout for Mobile */
+        @media (max-width: 650px) {
+            .karyakram-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
             }
-            .center-separator {
+            .couple-container {
+                flex-direction: column;
+            }
+            .center-art {
                 transform: rotate(90deg);
                 margin: 5px 0;
             }
-            .footer-sections {
+            .family-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .footer-column {
-                border-right: none;
-                border-bottom: 1px dashed rgba(163, 29, 39, 0.3);
-                padding-bottom: 10px;
-            }
-            .footer-column:last-child {
-                border-bottom: none;
+                gap: 20px;
             }
         }
     </style>
@@ -329,25 +343,25 @@
     <div class="cover-page" id="coverPage">
         <div class="cover-content">
             <span style="font-size: 50px; color: #e2bc74; margin-bottom: 10px;">🔱</span>
-            <h1 style="font-family: 'Yatra One', cursive; font-size: 28px; color: #e2bc74;">वैवाहिक कार्यक्रम</h1>
+            <h1 style="font-family: 'Yatra One', cursive; font-size: 28px; color: #e2bc74;">वैवाहिक आमंत्रण पत्रिका</h1>
             <p style="font-size: 14px; color: #fff; margin-top: 5px; letter-spacing: 1px;">चौहान परिवार</p>
             <button class="open-btn" onclick="openCard()">Open Invitation</button>
         </div>
     </div>
 
-    <!-- MAIN TRADITIONAL CARD CONTAINER -->
+    <!-- MAIN TRADITIONAL MULTI-PANEL CARD -->
     <div class="card-container" id="mainCard">
         
-        <!-- PANEL 1: KARYAKRAM -->
+        <!-- FIRST TOP PANEL: KARYAKRAM -->
         <div class="panel">
-            <div class="diamond-border">◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆</div>
-            <div class="ganesh-header">।। श्री गणेशाय नमः ।।</div>
+            <div class="ganesh-header">
+                <span class="ganesh-icon">🪔</span>
+                <span>।। श्री गणेशाय नमः ।।</span>
+                <span class="ganesh-icon">🪔</span>
+            </div>
+
             <div class="section-title">वैवाहिक कार्यक्रम</div>
 
-            <div class="top-row-events">
-                <div class="event-box">
-                    <div class="event-name">मण्डप / हल्दी</div>
-                    <div class="event-date">3 जनवरी 2026 शनिवार</div>
-                </div>
+            <div class="karyakram-grid">
                 <div class="event-box">
                     

@@ -9,18 +9,19 @@
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: #fcf8f2;
+            background-color: #3d030c;
             font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            overflow: hidden;
+            padding: 15px;
+            overflow-x: hidden;
         }
 
         /* --- COVER PAGE STYLES --- */
@@ -49,163 +50,276 @@
         }
 
         .cover-content {
-            border: 2px solid #b8860b;
-            padding: 30px 20px;
+            border: 2px solid #e2bc74;
+            padding: 40px 20px;
             border-radius: 8px;
             max-width: 400px;
             width: 100%;
-            background: rgba(128, 0, 32, 0.7);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: rgba(128, 0, 32, 0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Ganesha SVG Wrapper */
-        .ganesha-cover {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-        }
-
-        .cover-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 50px;
-            color: #b8860b;
-            margin: 0 0 5px 0;
-        }
-
-        .cover-subtitle {
-            font-size: 14px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            color: #fcf8f2;
-        }
-
         .open-btn {
-            background-color: #b8860b;
-            color: white;
-            border: none;
+            background-color: #a31d27;
+            color: #f7e7c4;
+            border: 2px solid #e2bc74;
             padding: 12px 35px;
             font-size: 16px;
             font-weight: 600;
             border-radius: 25px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 20px;
         }
 
         .open-btn:hover {
-            background-color: #d4af37;
+            background-color: #e2bc74;
+            color: #330000;
             transform: scale(1.05);
-            box-shadow: 0 7px 20px rgba(184, 134, 11, 0.6);
         }
 
-        /* --- MAIN CARD STYLES --- */
-        .card {
-            background-color: #ffffff;
-            border: 15px solid #800020;
-            border-image: linear-gradient(to bottom right, #b8860b, #800020, #b8860b) 15;
-            padding: 40px;
-            max-width: 500px;
+        /* --- MAIN PHOTO LAYOUT CARD --- */
+        .card-container {
+            max-width: 900px;
             width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
             transition: all 0.8s ease-in-out;
-            transition-delay: 0.2s;
+            pointer-events: none;
         }
 
-        body.card-visible .card {
+        body.card-visible .card-container {
             opacity: 1;
             transform: scale(1);
+            pointer-events: auto;
         }
 
         body.card-visible {
             overflow: auto;
         }
 
-        .ganesha-main {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px auto;
+        .panel {
+            background-color: #f7e7c4; /* Cream Background from Photo */
+            border: 6px double #a31d27;
+            padding: 20px;
+            color: #a31d27;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            text-align: center;
         }
 
-        .mantra {
-            font-style: italic;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .invitation-text {
-            font-size: 16px;
-            text-transform: uppercase;
+        /* Top/Bottom Traditional Borders */
+        .diamond-border {
+            font-size: 9px;
             letter-spacing: 2px;
-            color: #800020;
-            font-weight: 600;
+            color: #a31d27;
+            opacity: 0.6;
+            margin: 5px 0;
         }
 
-        .names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 48px;
-            color: #b8860b;
-            margin: 20px 0;
+        .ganesh-header {
+            font-family: 'Yatra One', cursive;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
 
-        .and {
-            font-size: 24px;
-            font-family: 'Poppins', sans-serif;
-            color: #800020;
-            display: block;
-            margin: -10px 0;
+        .section-title {
+            background-color: #a31d27;
+            color: #f7e7c4;
+            display: inline-block;
+            padding: 2px 20px;
+            font-family: 'Yatra One', cursive;
+            font-size: 15px;
+            border-radius: 3px;
+            margin-bottom: 15px;
         }
 
-        .details {
-            margin-top: 30px;
-            border-top: 1px dashed #b8860b;
-            border-bottom: 1px dashed #b8860b;
-            padding: 20px 0;
+        /* --- PANEL 1: KARYAKRAM (Exact Photo Design) --- */
+        .top-row-events {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .date {
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
+        .event-box {
+            border: 2px dashed #a31d27;
+            padding: 10px 15px;
+            border-radius: 50% 50% 0 0; /* Dome Shape from Photo */
+            background: #fff6e0;
+            min-width: 200px;
         }
 
-        .time {
-            font-size: 16px;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        .venue {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .venue h3 {
-            color: #800020;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        .footer {
-            margin-top: 30px;
+        .event-name {
+            font-family: 'Yatra One', cursive;
             font-size: 14px;
-            color: #777;
+            margin-bottom: 3px;
         }
 
-        .footer strong {
-            color: #800020;
+        .event-date {
+            background-color: #a31d27;
+            color: #f7e7c4;
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        .barat-title {
+            background-color: #a31d27;
+            color: #f7e7c4;
+            display: inline-block;
+            padding: 2px 15px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 2px;
+            margin-bottom: 3px;
+        }
+
+        .barat-date {
+            font-family: 'Yatra One', cursive;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .poetry-box {
+            border: 1px solid #a31d27;
+            padding: 8px;
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 10px auto;
+            max-width: 700px;
+            background-color: #fff9ed;
+            font-weight: 500;
+        }
+
+        .venue-info {
+            font-family: 'Yatra One', cursive;
+            font-size: 14px;
+        }
+
+        /* --- PANEL 2: INVITATION PANEL (Exact Photo Text Alignment) --- */
+        .manyavar-header {
+            text-align: left;
+            font-family: 'Yatra One', cursive;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+
+        .krupa-text {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Photo Column Structure for Details */
+        .details-columns {
+            display: grid;
+            grid-template-columns: 1fr 0.3fr 1fr;
+            align-items: center;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .bio-data-block {
+            padding: 10px;
+        }
+
+        .profile-title {
+            font-family: 'Yatra One', cursive;
+            font-size: 18px;
+            font-weight: bold;
+            color: #a31d27;
+            margin-bottom: 5px;
+        }
+
+        .bio-text {
+            font-size: 12px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .center-separator {
+            font-size: 30px;
+        }
+
+        .blessing-text {
+            font-size: 13px;
+            font-weight: 600;
+            max-width: 500px;
+            margin: 15px auto;
+            line-height: 1.4;
+        }
+
+        /* Bottom 3 Columns Footer from Photo */
+        .footer-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-top: 1px dashed #a31d27;
+            margin-top: 20px;
+            padding-top: 10px;
+            gap: 10px;
+        }
+
+        .footer-column {
+            font-size: 11px;
+            border-right: 1px solid rgba(163, 29, 39, 0.2);
+        }
+
+        .footer-column:last-child {
+            border-right: none;
+        }
+
+        .footer-column h4 {
+            background-color: #a31d27;
+            color: #f7e7c4;
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin-bottom: 5px;
+            border-radius: 2px;
+            font-family: 'Yatra One', cursive;
+        }
+
+        .footer-names {
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Mobile Layout Shift */
+        @media (max-width: 600px) {
+            .details-columns {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .center-separator {
+                transform: rotate(90deg);
+                margin: 5px 0;
+            }
+            .footer-sections {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .footer-column {
+                border-right: none;
+                border-bottom: 1px dashed rgba(163, 29, 39, 0.3);
+                padding-bottom: 10px;
+            }
+            .footer-column:last-child {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
@@ -214,75 +328,26 @@
     <!-- STARTING COVER PAGE -->
     <div class="cover-page" id="coverPage">
         <div class="cover-content">
-            <!-- Ganesh Ji Beautiful Vector SVG on Cover -->
-            <svg class="ganesha-cover" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
-                <path d="M50 5C35 5 32 18 32 25C32 28 35 30 38 30C42 30 43 25 45 22C47 18 49 12 50 12C51 12 53 18 55 22C57 25 58 30 62 30C65 30 68 28 68 25C68 18 65 5 50 5Z" fill="#b8860b"/>
-                <path d="M42 32C42 32 30 35 30 45C30 55 40 55 40 58C40 62 35 65 32 68C28 72 32 78 38 78C48 78 50 65 50 60" stroke="#b8860b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M58 32C58 32 70 35 70 45C70 52 65 55 62 58C58 62 55 68 58 72C60 75 55 78 48 78" stroke="#b8860b" stroke-width="3" stroke-linecap="round"/>
-                <path d="M50 28V52C50 58 45 65 42 70C38 75 42 82 50 82C62 82 65 72 65 65C65 58 53 52 53 45" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="44" cy="38" r="2" fill="#b8860b"/>
-                <circle cx="56" cy="38" r="2" fill="#b8860b"/>
-                <path d="M47 25H53M45 20H55M48 15H52" stroke="#b8860b" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-
-            <h1 class="cover-title">Rahul & Anjali</h1>
-            <p class="cover-subtitle">Wedding Invitation</p>
+            <span style="font-size: 50px; color: #e2bc74; margin-bottom: 10px;">🔱</span>
+            <h1 style="font-family: 'Yatra One', cursive; font-size: 28px; color: #e2bc74;">वैवाहिक कार्यक्रम</h1>
+            <p style="font-size: 14px; color: #fff; margin-top: 5px; letter-spacing: 1px;">चौहान परिवार</p>
             <button class="open-btn" onclick="openCard()">Open Invitation</button>
         </div>
     </div>
 
-    <!-- MAIN INVITATION CARD -->
-    <div class="card">
-        <!-- Ganesh Ji SVG on Main Card -->
-        <svg class="ganesha-main" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
-            <path d="M50 5C35 5 32 18 32 25C32 28 35 30 38 30C42 30 43 25 45 22C47 18 49 12 50 12C51 12 53 18 55 22C57 25 58 30 62 30C65 30 68 28 68 25C68 18 65 5 50 5Z" fill="#b8860b"/>
-            <path d="M42 32C42 32 30 35 30 45C30 55 40 55 40 58C40 62 35 65 32 68C28 72 32 78 38 78C48 78 50 65 50 60" stroke="#b8860b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M58 32C58 32 70 35 70 45C70 52 65 55 62 58C58 62 55 68 58 72C60 75 55 78 48 78" stroke="#b8860b" stroke-width="3" stroke-linecap="round"/>
-            <path d="M50 28V52C50 58 45 65 42 70C38 75 42 82 50 82C62 82 65 72 65 65C65 58 53 52 53 45" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="44" cy="38" r="2" fill="#b8860b"/>
-            <circle cx="56" cy="38" r="2" fill="#b8860b"/>
-            <path d="M47 25H53M45 20H55M48 15H52" stroke="#b8860b" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+    <!-- MAIN TRADITIONAL CARD CONTAINER -->
+    <div class="card-container" id="mainCard">
         
-        <div class="mantra">
-            "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
-            निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥"
-        </div>
+        <!-- PANEL 1: KARYAKRAM -->
+        <div class="panel">
+            <div class="diamond-border">◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆ ◇ ◆</div>
+            <div class="ganesh-header">।। श्री गणेशाय नमः ।।</div>
+            <div class="section-title">वैवाहिक कार्यक्रम</div>
 
-        <div class="invitation-text">Wedding Invitation</div>
-        
-        <div class="names">
-            Rahul 
-            <span class="and">&</span> 
-            Anjali
-        </div>
-
-        <div class="invitation-text">के पावन विवाह उत्सव में आपका स्वागत है</div>
-
-        <div class="details">
-            <div class="date">रविवार, 15 नवंबर 2026</div>
-            <div class="time">शाम 07:00 बजे से</div>
-            
-            <div class="venue">
-                <h3>विवाह स्थल:</h3>
-                <p>रॉयल पैलेस मैरिज हॉल,<br>MAIN ROAD, RANCHI</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>दर्शनाभिलाषी: <strong>शर्मा परिवार</strong></p>
-            <p>कृपया पधारकर नव-दम्पति को अपना आशीर्वाद दें।</p>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT FOR TOGGLE EFFECT -->
-    <script>
-        function openCard() {
-            document.getElementById('coverPage').classList.add('hide');
-            document.body.classList.add('card-visible');
-        }
-    </script>
-
-</body>
-  </html>
-  
+            <div class="top-row-events">
+                <div class="event-box">
+                    <div class="event-name">मण्डप / हल्दी</div>
+                    <div class="event-date">3 जनवरी 2026 शनिवार</div>
+                </div>
+                <div class="event-box">
+                    

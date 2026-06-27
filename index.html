@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadi Ka Nimantran</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcf8f2;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* --- COVER PAGE STYLES --- */
+        .cover-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #800020, #4a0012);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .cover-page.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .cover-content {
+            border: 2px solid #b8860b;
+            padding: 30px 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            background: rgba(128, 0, 32, 0.7);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Ganesha SVG Wrapper */
+        .ganesha-cover {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .cover-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: #b8860b;
+            margin: 0 0 5px 0;
+        }
+
+        .cover-subtitle {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: #fcf8f2;
+        }
+
+        .open-btn {
+            background-color: #b8860b;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .open-btn:hover {
+            background-color: #d4af37;
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(184, 134, 11, 0.6);
+        }
+
+        /* --- MAIN CARD STYLES --- */
+        .card {
+            background-color: #ffffff;
+            border: 15px solid #800020;
+            border-image: linear-gradient(to bottom right, #b8860b, #800020, #b8860b) 15;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease-in-out;
+            transition-delay: 0.2s;
+        }
+
+        body.card-visible .card {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        body.card-visible {
+            overflow: auto;
+        }
+
+        .ganesha-main {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px auto;
+        }
+
+        .mantra {
+            font-style: italic;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .invitation-text {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #800020;
+            font-weight: 600;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #b8860b;
+            margin: 20px 0;
+        }
+
+        .and {
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            color: #800020;
+            display: block;
+            margin: -10px 0;
+        }
+
+        .details {
+            margin-top: 30px;
+            border-top: 1px dashed #b8860b;
+            border-bottom: 1px dashed #b8860b;
+            padding: 20px 0;
+        }
+
+        .date {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .time {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .venue {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .venue h3 {
+            color: #800020;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer strong {
+            color: #800020;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STARTING COVER PAGE -->
+    <div class="cover-page" id="coverPage">
+        <div class="cover-content">
+            <!-- Ganesh Ji Beautiful Vector SVG on Cover -->
+            <svg class="ganesha-cover" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+                <path d="M50 5C35 5 32 18 32 25C32 28 35 30 38 30C42 30 43 25 45 22C47 18 49 12 50 12C51 12 53 18 55 22C57 25 58 30 62 30C65 30 68 28 68 25C68 18 65 5 50 5Z" fill="#b8860b"/>
+                <path d="M42 32C42 32 30 35 30 45C30 55 40 55 40 58C40 62 35 65 32 68C28 72 32 78 38 78C48 78 50 65 50 60" stroke="#b8860b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M58 32C58 32 70 35 70 45C70 52 65 55 62 58C58 62 55 68 58 72C60 75 55 78 48 78" stroke="#b8860b" stroke-width="3" stroke-linecap="round"/>
+                <path d="M50 28V52C50 58 45 65 42 70C38 75 42 82 50 82C62 82 65 72 65 65C65 58 53 52 53 45" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="44" cy="38" r="2" fill="#b8860b"/>
+                <circle cx="56" cy="38" r="2" fill="#b8860b"/>
+                <path d="M47 25H53M45 20H55M48 15H52" stroke="#b8860b" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+
+            <h1 class="cover-title">Rahul & Anjali</h1>
+            <p class="cover-subtitle">Wedding Invitation</p>
+            <button class="open-btn" onclick="openCard()">Open Invitation</button>
+        </div>
+    </div>
+
+    <!-- MAIN INVITATION CARD -->
+    <div class="card">
+        <!-- Ganesh Ji SVG on Main Card -->
+        <svg class="ganesha-main" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
+            <path d="M50 5C35 5 32 18 32 25C32 28 35 30 38 30C42 30 43 25 45 22C47 18 49 12 50 12C51 12 53 18 55 22C57 25 58 30 62 30C65 30 68 28 68 25C68 18 65 5 50 5Z" fill="#b8860b"/>
+            <path d="M42 32C42 32 30 35 30 45C30 55 40 55 40 58C40 62 35 65 32 68C28 72 32 78 38 78C48 78 50 65 50 60" stroke="#b8860b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 32C58 32 70 35 70 45C70 52 65 55 62 58C58 62 55 68 58 72C60 75 55 78 48 78" stroke="#b8860b" stroke-width="3" stroke-linecap="round"/>
+            <path d="M50 28V52C50 58 45 65 42 70C38 75 42 82 50 82C62 82 65 72 65 65C65 58 53 52 53 45" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="44" cy="38" r="2" fill="#b8860b"/>
+            <circle cx="56" cy="38" r="2" fill="#b8860b"/>
+            <path d="M47 25H53M45 20H55M48 15H52" stroke="#b8860b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        
+        <div class="mantra">
+            "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+            निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥"
+        </div>
+
+        <div class="invitation-text">Wedding Invitation</div>
+        
+        <div class="names">
+            Rahul 
+            <span class="and">&</span> 
+            Anjali
+        </div>
+
+        <div class="invitation-text">के पावन विवाह उत्सव में आपका स्वागत है</div>
+
+        <div class="details">
+            <div class="date">रविवार, 15 नवंबर 2026</div>
+            <div class="time">शाम 07:00 बजे से</div>
+            
+            <div class="venue">
+                <h3>विवाह स्थल:</h3>
+                <p>रॉयल पैलेस मैरिज हॉल,<br>MAIN ROAD, RANCHI</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>दर्शनाभिलाषी: <strong>शर्मा परिवार</strong></p>
+            <p>कृपया पधारकर नव-दम्पति को अपना आशीर्वाद दें।</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR TOGGLE EFFECT -->
+    <script>
+        function openCard() {
+            document.getElementById('coverPage').classList.add('hide');
+            document.body.classList.add('card-visible');
+        }
+    </script>
+
+</body>
+  </html>
+  
